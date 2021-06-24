@@ -1,0 +1,83 @@
+###Obtener todos los empleados
+GET http://localhost:3000/api/empleados HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTk5NzUsImV4cCI6MTYyMjI2MzU3NX0.h1T4rzVcayRlsicYpQmhhh5_vdRNJUQ6Wo8-n_Uo-QM
+
+###Crear un usuario
+POST http://localhost:3100/api/users HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTk5NzUsImV4cCI6MTYyMjI2MzU3NX0.h1T4rzVcayRlsicYpQmhhh5_vdRNJUQ6Wo8-n_Uo-QM
+
+###Insertar Empleados
+POST http://localhost:3000/api/empleados HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTk5NzUsImV4cCI6MTYyMjI2MzU3NX0.h1T4rzVcayRlsicYpQmhhh5_vdRNJUQ6Wo8-n_Uo-QM
+
+{
+    "nombre": "Tigre Toño",
+    "puesto": "Developer JMaster",
+    "departamento": "Computer ",
+    "salario": 22500
+}
+
+###Consultar por ID
+GET http://localhost:3000/api/empleados/6079d449eab46e47f8de8fe3 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTk5NzUsImV4cCI6MTYyMjI2MzU3NX0.h1T4rzVcayRlsicYpQmhhh5_vdRNJUQ6Wo8-n_Uo-QM
+
+###Modificar por ID
+PUT http://localhost:3000/api/empleados/6079d449eab46e47f8de8fe3   HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Pedro Perez",
+    "puesto": "Developer JR",
+    "departamento": "Computer Sciences",
+    "salario": 5000000
+}
+
+###Eliminar por ID
+DELETE http://localhost:3000/api/empleados/6079d449eab46e47f8de8fe3   HTTP/1.1
+Content-Type: application/json
+
+###Iniciar sesion
+POST http://localhost:3100/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "a.martinez@gmail.com",
+    "password": "Armando1234"
+}
+
+###Usuarios
+GET http://localhost:3100/api/users HTTP/1.1
+Content-Type: application/json
+Authorization: token-auth eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYWJmYmNmODM4ZGVhNGVlY2ZlNmQ0NyIsIm5hbWUiOiJBcm1hbmRvIE1hcnRpbmV6IiwiZW1haWwiOiJhLm1hcnRpbmV6QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDBiMDZZUXRtSHhmVU02bFBFenJpTnV0QklmVXA5Wnd6bzVhV1NHSHdYSHlndFFrWnFTUE91IiwiX192IjowLCJ0aXBvIjoiMSJ9LCJpYXQiOjE2MjMyNTE4ODgsImV4cCI6MTYyMzI1NTQ4OH0.HjE-XYOBG_Pzt_ZIxel4DWFznJpfm-8lJn0vqo-Xiv8
+
+###Crear un usuario
+POST http://localhost:3100/api/users HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTkwMjYsImV4cCI6MTYyMjI2MjYyNn0.let8Ty7B8q04yIQw9a2ovCLY4_9Y6x1J4jrEy2dKzCU
+
+{
+    "name": "Hector",
+    "email": "hector@gmail.com",
+    "password": "Hector1234"
+}
+
+###eliminar un usuario por ID
+DELETE http://localhost:3100/api/users/60b1b5e240ff97057cc5de69 HTTP/1.1
+Content-Type: application/application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYjExOWZlNzg0ZWM2MTRkOGIzNDA0YiIsIm5hbWUiOiJNYXRlbyIsImVtYWlsIjoibWF0ZW9AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkc3BrV1JvQjZ0djYvQzg2djNPT3JYdWtlZ0Y0eG1pc3A4bWVMQzlVTnJCZHBXWjUyZlBkMWEiLCJfX3YiOjB9LCJpYXQiOjE2MjIyNTkwMjYsImV4cCI6MTYyMjI2MjYyNn0.let8Ty7B8q04yIQw9a2ovCLY4_9Y6x1J4jrEy2dKzCU
+
+###Modificar usuario por ID
+PUT http://localhost:3100/api/users/60b119fe784ec614d8b3404b HTTP/1.1
+Content-Type: application/json
+Authorization: token-auth eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwYWJmYmNmODM4ZGVhNGVlY2ZlNmQ0NyIsIm5hbWUiOiJBcm1hbmRvIE1hcnRpbmV6IiwiZW1haWwiOiJhLm1hcnRpbmV6QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDBiMDZZUXRtSHhmVU02bFBFenJpTnV0QklmVXA5Wnd6bzVhV1NHSHdYSHlndFFrWnFTUE91IiwiX192IjowLCJ0aXBvIjoiMSJ9LCJpYXQiOjE2MjMyNTE4ODgsImV4cCI6MTYyMzI1NTQ4OH0.HjE-XYOBG_Pzt_ZIxel4DWFznJpfm-8lJn0vqo-Xiv8
+
+{
+    "name": "Mateo",
+    "email": "mateo@gmail.com",
+    "password": "Mateo1234",
+    "tipo": 1
+}
